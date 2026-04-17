@@ -15,7 +15,7 @@ axes.labelweight: bold
 
 # --- Colors ---
 # See APEX_Branding.pdf 
-axes.prop_cycle: cycler(color=["#67CDE6", "#252525", "#151515"])
+axes.prop_cycle: cycler(color=["#67CDE6", "#252525", "#0000ff", "#151515"])
 text.color: "#252525"
 
 # --- Spines & grid ---
