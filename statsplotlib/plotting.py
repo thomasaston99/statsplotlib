@@ -65,7 +65,7 @@ def create_branded_plot(figsize=(10, 6), transparent=True, watermark=False):
     
     return fig, ax
 
-def create_branded_subplot(nrows=1, ncols=1, figsize=(12, 8), transparent=True, watermark=False):
+def create_branded_subplot(nrows=1, ncols=1, figsize=(12, 8), transparent=True, watermark=False, **kwargs):
     """
     Creates a Matplotlib figure with multiple subplots and STATSports styling.
     
@@ -85,7 +85,7 @@ def create_branded_subplot(nrows=1, ncols=1, figsize=(12, 8), transparent=True, 
     if os.path.exists(STYLE_PATH):
         plt.style.use(STYLE_PATH)
     
-    fig, axes = plt.subplots(nrows=nrows, ncols=ncols, figsize=figsize)
+    fig, axes = plt.subplots(nrows=nrows, ncols=ncols, figsize=figsize, **kwargs)
     
     if not transparent:
         fig.patch.set_facecolor('white')
