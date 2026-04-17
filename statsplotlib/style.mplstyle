@@ -1,0 +1,50 @@
+# style.mplstyle
+# matplotlib style settings consistent with STATSports branding
+
+# --- Fonts ---
+# 1. Base Font: Open Sans for all body text, labels, and ticks
+font.family: sans-serif
+font.sans-serif: Open Sans, Arial, sans-serif
+font.size: 12
+
+# 2. Title Font: Oswald for the main axes titles
+axes.titlesize: 18
+axes.titleweight: bold
+axes.labelsize: 12
+axes.labelweight: bold
+
+# --- Colors ---
+# See APEX_Branding.pdf 
+axes.prop_cycle: cycler(color=["#67CDE6", "#252525", "#151515"])
+text.color: "#252525"
+
+# --- Spines & grid ---
+axes.spines.top: False
+axes.spines.right: False
+axes.grid: True
+grid.linestyle: -
+grid.linewidth: 0.5
+grid.alpha: 0.15
+grid.color: "#bcbcbc"
+
+# --- Ticks ---
+xtick.direction: in
+ytick.direction: in
+
+# --- Figure & save ---
+# Note that by default plots will save as transparent. 
+# create_branded_plot has functionality to override this
+figure.facecolor: none
+axes.facecolor: none
+savefig.bbox: tight
+savefig.dpi: 1000
+
+# --- Line settings ---
+lines.linewidth: 4
+lines.markersize: 10
+
+# --- Legend ---
+legend.frameon: False
+legend.edgecolor: none
+legend.facecolor: none
+legend.labelcolor: linecolor 
