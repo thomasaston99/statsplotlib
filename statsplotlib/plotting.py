@@ -65,6 +65,45 @@ def create_branded_plot(figsize=(10, 6), transparent=True, watermark=False):
     
     return fig, ax
 
+def create_branded_subplot(nrows=1, ncols=1, figsize=(12, 8), transparent=True, watermark=False):
+    """
+    Creates a Matplotlib figure with multiple subplots and STATSports styling.
+    
+    Parameters:
+    - nrows: Number of rows in subplot grid
+    - ncols: Number of columns in subplot grid
+    - figsize: Tuple for figure dimensions (width, height)
+    - transparent: Boolean for background transparency
+    - watermark: Boolean for centered faded logo watermark
+    
+    Returns:
+    - fig: Figure object
+    - axes: Numpy array of axes objects (or single axis if 1x1)
+    """
+    load_custom_fonts()
+    
+    if os.path.exists(STYLE_PATH):
+        plt.style.use(STYLE_PATH)
+    
+    fig, axes = plt.subplots(nrows=nrows, ncols=ncols, figsize=figsize)
+    
+    if not transparent:
+        fig.patch.set_facecolor('white')
+    
+    # Add logo AFTER tight layout (won't be affected by it)
+    if os.path.exists(LOGO_PATH):
+        logo = mpimg.imread(LOGO_PATH)
+        if watermark:
+            wm_ax = fig.add_axes([0.20, 0.20, 0.60, 0.60], zorder=0)
+            wm_ax.imshow(logo, alpha=0.08)
+            wm_ax.axis('off')
+        else:
+            logo_ax = fig.add_axes([0.78, 0.04, 0.12, 0.12], anchor='SE', zorder=10)
+            logo_ax.imshow(logo)
+            logo_ax.axis('off')
+    
+    return fig, axes
+
 def add_branded_title(fig, ax, title_text, subtitle_text=None):
     """
     Applies the correct typography hierarchy to the plot titles.

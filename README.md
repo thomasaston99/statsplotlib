@@ -27,5 +27,5 @@ if shared_repo_path not in sys.path:
 from statsplotlib.plotting import create_branded_plot, add_branded_title
 ```
 
-There is also a demo script at `demo.py` which shows you how to generate this plot:
-![Sample plot](demo_plot.png)
+There are also demo scripts in `demos` which shows you how to generate simple plot. For example running `demos/demo_plot.py' generates:
+![Sample plot](demos/demo_plot.png)
