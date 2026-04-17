@@ -59,7 +59,7 @@ def create_branded_plot(figsize=(10, 6), transparent=True, watermark=False):
             wm_ax.axis('off')
         else:
             # STANDARD CORNER LOGO
-            logo_ax = fig.add_axes([0.85, 0.02, 0.12, 0.12], anchor='SE', zorder=10)
+            logo_ax = fig.add_axes([0.78, 0.02, 0.12, 0.12], anchor='SE', zorder=10)
             logo_ax.imshow(logo)
             logo_ax.axis('off')
     
